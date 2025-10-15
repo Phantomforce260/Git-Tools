@@ -1,14 +1,26 @@
 #!/bin/bash
 
+GITHUB="${HOME}/Documents/Github"
+CONFIG="${HOME}/.config"
+
+LFS="${GITHUB}/LFS"
+PERSONAL="${GITHUB}/Phantom"
+COLLABS="${GITHUB}/Collabs"
+
+PROJECTS="${HOME}/Documents/Projects"
+
 REPOS=(
-  "${HOME}/Documents/Github/LunarFlame-Website"
-  "${HOME}/Documents/Github/Lunar-Blog"
-  "${HOME}/Documents/Github/Sopa-Website"
-  "${HOME}/.config/hypr"
-  "${HOME}/.config/waybar"
-  "${HOME}/.config/nvim"
-  "${HOME}/Documents/Github/CS3043-Website"
-  "${HOME}/Documents/Projects/video_call"
+  "${LFS}/LunarFlame-Website"
+  "${LFS}/Static-Files"
+  "${LFS}/Lunar-Blog"
+  "${PERSONAL}/Sopa-Website"
+  "${PERSONAL}/Portfolio"
+  "${CONFIG}/hypr"
+  "${CONFIG}/waybar"
+  "${CONFIG}/nvim"
+  "${COLLABS}/video_call"
+
+  "${PERSONAL}/comm-site"
 )
 
 USER_ACTION=""
@@ -45,9 +57,9 @@ elif [ "$USER_ACTION" = "2" ]; then
 
     # Loop through each repository and call the summary script
     for REPO in "${REPOS[@]}"; do
-      echo -e "\n==================================================="
-      echo "Checking repository at: $REPO"
-      echo "==================================================="
-      "$SUMMARY_SCRIPT" "$REPO"
+        echo -e "\n========================================================="
+        echo "Checking repository at: ~/${REPO#/home/adrian/}"
+        echo "========================================================="
+        "$SUMMARY_SCRIPT" "$REPO"
     done
 fi

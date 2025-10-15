@@ -28,6 +28,8 @@ cd "$REPO_PATH" || exit 1
 # Get the repository name
 REPO_NAME=$(basename "$(git rev-parse --show-toplevel)")
 
+git add .
+
 # Get uncommitted changes with rename detection
 CHANGES=$(git status --porcelain -M)
 
@@ -58,6 +60,8 @@ while IFS= read -r line; do
       ;;
   esac
 done <<< "$CHANGES"
+
+git restore --staged .
 
 # Output the result
 echo "${REPO_NAME}:"

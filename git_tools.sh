@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TOOLS_DIR="${HOME}/Documents/Projects/git_tools"
+TOOLS_DIR="${GITHUB}/Git-Tools"
 
 GITHUB="${HOME}/Documents/Github"
 CONFIG="${HOME}/.config"

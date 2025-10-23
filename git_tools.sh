@@ -1,9 +1,9 @@
 #!/bin/bash
 
-TOOLS_DIR="${GITHUB}/Git-Tools"
 
 GITHUB="${HOME}/Documents/Github"
 CONFIG="${HOME}/.config"
+
 
 LFS="${GITHUB}/LFS"
 PERSONAL="${GITHUB}/Phantom"
@@ -24,6 +24,8 @@ REPOS=(
 
   "${PERSONAL}/comm-site"
 )
+
+TOOLS_DIR="${PERSONAL}/Git-Tools"
 
 USER_ACTION=""
 
